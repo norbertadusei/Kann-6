@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2e4734">
+<title>Jalulah’s Crochet — Handmade with Love</title>
+<style>
+:root{--green:#2e4734;--green2:#405b43;--burgundy:#702b3b;--burgundy2:#8a3b4b;--cream:#f8f5ee;--paper:#fffdf8;--sand:#e8dfd0;--ink:#243027;--muted:#7c8178;--gold:#b38b4d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;z-index:10;background:rgba(255,253,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid #e7e0d5}
+.navwrap{max-width:1240px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-family:Georgia,serif;font-weight:bold;font-size:clamp(20px,3vw,29px);color:var(--green)}.brandmark{width:43px;height:43px;border:2px solid var(--green);border-radius:50% 50% 48% 48%;display:grid;place-items:center;font-size:24px}
+.brand small{display:block;font:10px Arial,sans-serif;letter-spacing:2.4px;text-align:center;margin-top:3px}
+nav{display:flex;gap:28px;align-items:center;font-size:14px}nav a{padding:9px 0}nav a:hover{color:var(--gold)}
+.navactions{display:flex;gap:10px;align-items:center}.iconbtn,.menu-btn{border:1px solid var(--sand);background:var(--paper);color:var(--green);border-radius:50%;width:42px;height:42px;cursor:pointer;display:grid;place-items:center;font-size:19px}.cartcount{font-size:11px;display:inline-grid;place-items:center;background:var(--green);color:white;border-radius:50%;width:18px;height:18px;margin-left:3px}.menu-btn{display:none;border-radius:12px}
+.hero{max-width:1240px;margin:0 auto;padding:34px 24px 26px;display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center;min-height:420px}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--burgundy);font-weight:bold;text-transform:uppercase}.hero h1{font:clamp(38px,5vw,64px)/1.04 Georgia,serif;color:var(--green);margin:17px 0}.hero p{font-size:16px;line-height:1.8;max-width:440px;color:#4e574f}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:10px;padding:14px 22px;background:var(--green);color:white;cursor:pointer;font-weight:bold;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{background:#1d3223}.btn.secondary{background:transparent;border:1px solid #b8c0b6;color:var(--green)}.btn.secondary:hover{border-color:var(--burgundy);color:var(--burgundy);background:#f8edf0}.heroart{height:365px;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(130deg,#ead9dd,#f4eee3);display:grid;place-items:center}.heroart img{width:100%;height:100%;object-fit:cover}.hero-note{position:absolute;bottom:16px;left:16px;background:rgba(255,253,248,.95);padding:12px 16px;border-radius:12px;border-left:3px solid var(--burgundy);font-family:Georgia,serif;color:var(--green)}
+.section{max-width:1240px;margin:auto;padding:22px 24px 42px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px}.section h2{font:clamp(27px,3vw,36px) Georgia,serif;color:var(--green);margin:0}.section-head p{margin:8px 0 0;color:var(--muted);font-size:14px}.textlink{color:var(--green);font-weight:bold;font-size:14px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:0 0 17px}.filter{white-space:nowrap;border:1px solid var(--sand);background:var(--paper);border-radius:30px;padding:9px 15px;cursor:pointer;color:var(--green);font-size:13px}.filter.active,.filter:hover{background:var(--green);color:white;border-color:var(--green)}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product{background:var(--paper);border:1px solid #e9e2d7;border-radius:15px;overflow:hidden;box-shadow:0 5px 16px #2c392a08;transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-4px);box-shadow:0 12px 26px #2c392a12}.product-img{height:220px;background:#e9e0d1;position:relative;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;display:block}.tag{position:absolute;top:11px;left:11px;background:#fffdf0eF;color:var(--burgundy);padding:6px 9px;border-radius:20px;font-size:10px;font-weight:bold}.product-info{padding:15px}.product-info h3{font:20px Georgia,serif;margin:0 0 6px;color:var(--green)}.category{color:var(--muted);font-size:12px}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:13px}.price{font-weight:bold;color:var(--burgundy)}.add{border:0;border-radius:9px;background:#f1e2e5;color:var(--burgundy);font-weight:bold;padding:10px 12px;cursor:pointer}.add:hover{background:var(--burgundy);color:white}.empty{grid-column:1/-1;text-align:center;padding:40px 20px;background:var(--paper);border-radius:14px;color:var(--muted);border:1px dashed var(--sand)}
+.story{background:#e9e8dc;margin-top:5px}.story-inner{max-width:1240px;margin:auto;padding:38px 24px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.story h2{font:34px Georgia,serif;color:var(--green);margin:0 0 12px}.story p{line-height:1.8;color:#4e574f}.story-image{height:240px;border-radius:18px;overflow:hidden;background:#d6d0bf}.story-image img{width:100%;height:100%;object-fit:cover}
+.features{background:var(--green);color:white}.features-inner{max-width:1240px;margin:auto;padding:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature{display:flex;gap:12px;align-items:center}.feature-icon{font-size:25px;color:#e6c5cc}.feature strong{display:block;font:16px Georgia,serif}.feature small{display:block;color:#d4ddcf;margin-top:5px;font-size:11px}
+footer{background:linear-gradient(110deg,#203327 0%,#203327 72%,#542331 100%);color:#e9eee5;padding:25px 24px;text-align:center;font-size:12px;line-height:1.8}.footer-brand{font:24px Georgia,serif;margin-bottom:5px}
+.overlay{position:fixed;inset:0;background:#10181080;z-index:30;display:none;justify-content:flex-end}.overlay.open{display:flex}.cartpanel{width:min(440px,100%);height:100%;background:var(--paper);padding:22px;display:flex;flex-direction:column;box-shadow:-10px 0 40px #0002}.carthead{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--sand);padding-bottom:15px}.carthead h2{font:28px Georgia,serif;color:var(--green);margin:0}.close{border:0;background:#edf0e8;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:20px}.cartitems{flex:1;overflow:auto;padding:12px 0}.cartrow{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eee7db}.cartrow img{width:60px;height:60px;object-fit:cover;border-radius:9px}.cartrow strong{display:block;font-size:14px}.cartrow small{color:var(--muted)}.qty{display:flex;align-items:center;gap:8px;margin-top:6px}.qty button{border:1px solid var(--sand);background:white;border-radius:6px;width:25px;height:25px;cursor:pointer}.cartfoot{border-top:1px solid var(--sand);padding-top:16px}.totalrow{display:flex;justify-content:space-between;font-weight:bold;margin-bottom:15px}.checkout-note{font-size:12px;color:var(--muted);line-height:1.6;margin-top:10px}.searchbox{display:none;padding:0 24px 14px;max-width:1240px;margin:auto}.searchbox.open{display:block}.searchbox input{width:100%;padding:13px 15px;border:1px solid var(--sand);border-radius:10px;background:white;outline-color:var(--green)}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);background:var(--burgundy);color:white;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:.25s;z-index:50;box-shadow:0 6px 20px #0002}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.hero{grid-template-columns:1fr 1fr;gap:22px}.heroart{height:330px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product-img{height:230px}.features-inner{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.navwrap{padding:12px 14px;gap:8px}.brand{font-size:19px;gap:7px}.brandmark{width:36px;height:36px;font-size:20px}.brand small{font-size:8px;letter-spacing:1.8px}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);padding:15px 20px 20px;box-shadow:0 12px 18px #0001;flex-direction:column;align-items:stretch;gap:5px}nav.open{display:flex}nav a{padding:12px;border-bottom:1px solid #eee8dd}.menu-btn{display:grid}.iconbtn{width:38px;height:38px}.hero{grid-template-columns:1fr;padding:28px 16px 18px;gap:22px}.hero h1{font-size:42px}.hero p{font-size:15px}.heroart{height:270px;order:-1}.section{padding:24px 14px 32px}.section-head{align-items:start}.section h2{font-size:28px}.products{gap:10px}.product-img{height:165px}.product-info{padding:11px}.product-info h3{font-size:17px}.product-bottom{align-items:flex-start;flex-direction:column}.add{width:100%;padding:10px 6px}.story-inner{grid-template-columns:1fr;padding:30px 16px}.story-image{height:210px}.features-inner{padding:22px 16px;gap:20px 12px}.feature{align-items:flex-start;gap:8px}.feature-icon{font-size:21px}.feature strong{font-size:14px}.feature small{font-size:10px}.footer-brand{font-size:22px}}
+@media(max-width:380px){.brand{font-size:16px}.navactions{gap:5px}.hero h1{font-size:36px}.product-img{height:140px}.product-info h3{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="navwrap">
+    <a href="#home" class="brand"><span class="brandmark">❧</span><span>Jalulah’s Crochet<small>HANDMADE WITH LOVE</small></span></a>
+    <nav id="nav"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">Our Story</a><a href="#contact">Contact</a></nav>
+    <div class="navactions"><button class="iconbtn" id="searchToggle" aria-label="Search">⌕</button><button class="iconbtn" id="cartToggle" aria-label="Open cart">♧<span class="cartcount" id="cartCount">0</span></button><button class="menu-btn" id="menuToggle" aria-label="Menu">☰</button></div>
+  </div>
+  <div class="searchbox" id="searchBox"><input id="searchInput" type="search" placeholder="Search bags, hats, accessories…"></div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div><div class="eyebrow">Unique · Handmade · Timeless</div><h1>Beautiful Crochet Creations for Every Occasion</h1><p>At Jalulah’s Crochet, we create handmade pieces that add warmth, style and a little joy to everyday life. Made slowly, with care, just for you.</p><div class="actions"><a class="btn" href="#shop">Shop the Collection <span>→</span></a><a class="btn secondary" href="#about">Our Story</a></div></div>
+  <div class="heroart"><img id="heroImage" src="https://images.unsplash.com/photo-1638621784991-71b50a160509?auto=format&fit=crop&w=1000&q=85" alt="Handmade crochet product photo from Unsplash" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#c8c1a9,#e9ddc8)'"><div class="hero-note">Little details. Lots of love.</div></div>
+</section>
+<section class="section" id="shop">
+  <div class="section-head"><div><h2>Made for You</h2><p>Thoughtful handmade pieces, one stitch at a time.</p></div><a class="textlink" href="#shop" id="viewAll">Explore all →</a></div>
+  <div class="filters" id="filters"><button class="filter active" data-category="All">All pieces</button><button class="filter" data-category="Bags">Bags</button><button class="filter" data-category="Accessories">Accessories</button><button class="filter" data-category="Clothing">Clothing</button><button class="filter" data-category="Home">Home</button></div>
+  <div class="products" id="products"><div class="empty">Loading Jalulah’s collection…</div></div>
+</section>
+<section class="story" id="about"><div class="story-inner"><div><div class="eyebrow">A little about us</div><h2>Made by hand, made to be loved.</h2><p>Jalulah’s Crochet celebrates the beauty of handmade work. Every stitch takes time, every piece has its own character, and every order is prepared with care.</p><p>From everyday bags to thoughtful gifts, we’re here to bring a little more warmth and creativity into your world.</p><a class="btn" href="#contact">Let’s talk</a></div><div class="story-image"><img src="https://images.unsplash.com/photo-1638621784991-71b50a160509?auto=format&fit=crop&w=1000&q=85" alt="Handmade crochet product photo from Unsplash" onerror="this.style.display='none'"></div></div></section>
+<section class="features"><div class="features-inner"><div class="feature"><span class="feature-icon">♡</span><div><strong>Made with Care</strong><small>Every piece is thoughtfully handmade.</small></div></div><div class="feature"><span class="feature-icon">♧</span><div><strong>Delivery in Ghana</strong><small>We’ll coordinate delivery with you.</small></div></div><div class="feature"><span class="feature-icon">✳</span><div><strong>Support Local</strong><small>Small business, big dreams.</small></div></div><div class="feature"><span class="feature-icon">✓</span><div><strong>Personal Service</strong><small>Questions? We’re happy to help.</small></div></div></div></section>
+</main>
+<footer id="contact"><div class="footer-brand">Jalulah’s Crochet</div>Handmade with love · Ghana<br><a id="contactLink" href="mailto:hello@jalulahscrochet.example">Contact us to place an order</a><br><span style="color:#b7c5b4">© <span id="year"></span> Jalulah’s Crochet</span></footer>
+<div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart"><aside class="cartpanel"><div class="carthead"><h2>Your Basket</h2><button class="close" id="closeCart" aria-label="Close cart">×</button></div><div class="cartitems" id="cartItems"></div><div class="cartfoot"><div class="totalrow"><span>Subtotal</span><span id="cartTotal">GH₵0.00</span></div><button class="btn" style="width:100%" id="orderBtn">Enquire to Order via WhatsApp</button><p class="checkout-note">This demo cart does not take payments. Your order enquiry will open WhatsApp when you configure the shop’s contact number.</p></div></aside></div>
+<div class="toast" id="toast" role="status"></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import {getFirestore, collection, getDocs, query, orderBy} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAqpT5jpkooAsagm5g4Na0W5nPmCMrknn8",
+  authDomain: "elsie-s-crochet.firebaseapp.com",
+  projectId: "elsie-s-crochet",
+  storageBucket: "elsie-s-crochet.firebasestorage.app",
+  messagingSenderId: "197915487451",
+  appId: "1:197915487451:web:5d97c88d2fa8f55a0670fe"
+};
+
+const money = n => new Intl.NumberFormat("en-GH",{style:"currency",currency:"GHS"}).format(Number(n)||0);
+const fallbackImages = [
+  "https://images.unsplash.com/photo-1638621784991-71b50a160509?auto=format&fit=crop&w=1000&q=85",
+  "https://images.unsplash.com/photo-1777898277718-61e4945f8e6c?auto=format&fit=crop&w=1000&q=85",
+  "https://images.unsplash.com/photo-1679847628912-4c3e7402abc7?auto=format&fit=crop&w=1000&q=85",
+  "https://images.unsplash.com/photo-1753366556699-4be495e5bdd6?auto=format&fit=crop&w=1000&q=85",
+  "https://images.unsplash.com/photo-1777898277718-61e4945f8e6c?auto=format&fit=crop&w=1000&q=85",
+  "https://images.unsplash.com/photo-1679847628912-4c3e7402abc7?auto=format&fit=crop&w=1000&q=85"
+];
+let products = [];
+let cart = [];
+let category = "All";
+let search = "";
+const productRoot = document.getElementById("products");
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function imageFor(p,i){
+  // Support common image-field names used by different dashboard versions.
+  const candidate = p.image || p.imageUrl || p.imageURL || p.image_url ||
+                    p.photoURL || p.photoUrl || p.imgUrl || p.picture ||
+                    p.productImage || p.image_link || "";
+  return typeof candidate === "string" && candidate.trim()
+    ? candidate.trim()
+    : fallbackImages[i % fallbackImages.length];
+}
+function renderProducts(){
+ const filtered = products.filter(p => (category==="All" || (p.category||"Other").toLowerCase()===category.toLowerCase()) && `${p.name||""} ${p.category||""} ${p.description||""}`.toLowerCase().includes(search.toLowerCase()));
+ if(!filtered.length){productRoot.innerHTML=`<div class="empty">${products.length ? "No products match that search. Try another category." : "The collection is being prepared. Please check back soon."}</div>`;return}
+ productRoot.innerHTML = filtered.map((p,i)=>`<article class="product"><div class="product-img"><img loading="lazy" src="${escapeHTML(imageFor(p,i))}" alt="${escapeHTML(p.name||"Crochet item")}" onerror="if(!this.dataset.fallbackTried){this.dataset.fallbackTried='1';this.src='${fallbackImages[i%fallbackImages.length]}';}else{this.style.display='none';}"><span class="tag">${escapeHTML(p.category||"Handmade")}</span></div><div class="product-info"><h3>${escapeHTML(p.name||"Handmade crochet piece")}</h3><div class="category">${escapeHTML(p.description||"Made with care, stitch by stitch.")}</div><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" data-add="${escapeHTML(p.id)}">＋ Add</button></div></div></article>`).join("");
+ productRoot.querySelectorAll("[data-add]").forEach(btn=>btn.addEventListener("click",()=>addToCart(btn.dataset.add)));
+}
+function showToast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2100)}
+async function loadProducts(){
+ try{
+  const app=initializeApp(firebaseConfig);
+  const db=getFirestore(app);
+  const snap=await getDocs(collection(db,"products"));
+  products=snap.docs.map(d=>({id:d.id,...d.data()})).filter(p=>p.available!==false);
+  renderProducts();
+ }catch(err){
+  console.error("Firestore product load failed:",err);
+  productRoot.innerHTML=`<div class="empty"><strong>We couldn’t load the live collection.</strong><br><br>Please check your internet connection and make sure Firestore rules allow public read access to the <code>products</code> collection. This page does not need customer email/password sign-in.</div>`;
+ }
+}
+function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;const existing=cart.find(x=>x.id===id);if(existing)existing.qty++;else cart.push({...p,qty:1});renderCart();showToast("Added to your basket");}
+function renderCart(){
+ document.getElementById("cartCount").textContent=cart.reduce((n,p)=>n+p.qty,0);
+ const root=document.getElementById("cartItems");
+ if(!cart.length)root.innerHTML='<div class="empty">Your basket is empty for now.<br>Find something handmade to love.</div>';
+ else root.innerHTML=cart.map((p,i)=>`<div class="cartrow"><img src="${escapeHTML(imageFor(p,i))}" alt=""><div><strong>${escapeHTML(p.name||"Crochet item")}</strong><small>${money(p.price)} each</small><div class="qty"><button data-qty="${p.id}" data-delta="-1">−</button><span>${p.qty}</span><button data-qty="${p.id}" data-delta="1">+</button></div></div><strong>${money(Number(p.price||0)*p.qty)}</strong></div>`).join("");
+ document.getElementById("cartTotal").textContent=money(cart.reduce((s,p)=>s+Number(p.price||0)*p.qty,0));
+ root.querySelectorAll("[data-qty]").forEach(b=>b.addEventListener("click",()=>{const p=cart.find(x=>x.id===b.dataset.qty);if(p){p.qty+=Number(b.dataset.delta);if(p.qty<1)cart=cart.filter(x=>x.id!==p.id);renderCart()}}));
+}
+document.getElementById("cartToggle").addEventListener("click",()=>document.getElementById("cartOverlay").classList.add("open"));
+document.getElementById("closeCart").addEventListener("click",()=>document.getElementById("cartOverlay").classList.remove("open"));
+document.getElementById("cartOverlay").addEventListener("click",e=>{if(e.target.id==="cartOverlay")e.currentTarget.classList.remove("open")});
+document.getElementById("searchToggle").addEventListener("click",()=>{const box=document.getElementById("searchBox");box.classList.toggle("open");if(box.classList.contains("open"))document.getElementById("searchInput").focus()});
+document.getElementById("searchInput").addEventListener("input",e=>{search=e.target.value;renderProducts()});
+document.getElementById("menuToggle").addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
+document.getElementById("nav").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+document.getElementById("filters").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{category=b.dataset.category;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts()}));
+document.getElementById("viewAll").addEventListener("click",()=>{category="All";document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.category==="All"));renderProducts()});
+document.getElementById("orderBtn").addEventListener("click",()=>{
+ if(!cart.length){showToast("Your basket is empty");return}
+ const lines=cart.map(p=>`${p.qty} × ${p.name} — ${money(Number(p.price||0)*p.qty)}`).join("\n");
+ const msg=encodeURIComponent(`Hello Jalulah’s Crochet! I'd like to enquire about this order:\n${lines}\nSubtotal: ${money(cart.reduce((s,p)=>s+Number(p.price||0)*p.qty,0))}\nPlease confirm availability and delivery.`);
+ // Replace 233XXXXXXXX with the shop's WhatsApp number (country code included, no + or spaces).
+ window.open(`https://wa.me/233XXXXXXXX?text=${msg}`,"_blank","noopener");
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+renderCart();
+loadProducts();
+</script>
+</body>
+</html>
